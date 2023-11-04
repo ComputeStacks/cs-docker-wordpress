@@ -1,6 +1,12 @@
 # ComputeStacks Wordpress on OpenLiteSpeed Changelog
 
+## 2023-November-4
+
+* Explicitly set WordPress Core Auto-Updates to minor only.
+* Remove default plugin installation.
+
 ## 2023-June-27
+
 * Added example multisite configurations for nginx
 
 ## 2023-June-15

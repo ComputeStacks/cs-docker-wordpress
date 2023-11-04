@@ -54,14 +54,14 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 define( 'FS_METHOD', 'direct' ); 
 define( 'WP_MEMORY_LIMIT', '96M' );
 define( 'CS_PLUGIN_DIR', '/opt/cs-wordpress-plugin-main' );
+define( 'WP_AUTO_UPDATE_CORE', 'minor' );
 PHP
 
   echo >&2 "Installing WordPress..."
   sudo -u www-data wp core install --url=$WORDPRESS_URL --title="$WORDPRESS_TITLE" --admin_user=$WORDPRESS_USER --admin_password=$WORDPRESS_PASSWORD --admin_email="$WORDPRESS_EMAIL" --skip-email
 
   if [[ -z "$WORDPRESS_PLUGINLIST" ]]; then
-    echo "Pluginlist-variable empty: installing default plugins Litespeed cache, WP Mail"
-    WORDPRESS_PLUGINLIST="litespeed-cache,wp-mail-smtp"
+    echo "Pluginlist-variable empty, skipping plugin installation."
   else
     IFS=',' read -r -a array <<< "$WORDPRESS_PLUGINLIST"
     for i in "${array[@]}"
