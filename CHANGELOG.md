@@ -1,5 +1,9 @@
 # ComputeStacks Wordpress on OpenLiteSpeed Changelog
 
+## 2024-Feb-21
+
+* Remove `MAILTO=` from the app cronjob. Mail is now disabled globally for all cronjobs.
+
 ## 2023-November-4
 
 * Explicitly set WordPress Core Auto-Updates to minor only.

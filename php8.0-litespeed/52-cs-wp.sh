@@ -29,7 +29,6 @@ if [ -f /var/www/crontab ]; then
   else
     cat << EOF >> '/var/www/crontab'
 
-MAILTO=""
 */30 * * * * www-data /usr/bin/curl http://localhost/wp-cron.php?doing_wp_cron
 EOF
   fi
@@ -40,14 +39,12 @@ if [ -f /etc/cron.d/myapp ]; then
   else
     cat << EOF >> '/etc/cron.d/myapp'
 
-MAILTO=""
 */30 * * * * www-data /usr/bin/curl http://localhost/wp-cron.php?doing_wp_cron
 EOF
   fi
 else
   cat << EOF >> '/etc/cron.d/myapp'
 
-MAILTO=""
 */30 * * * * www-data /usr/bin/curl http://localhost/wp-cron.php?doing_wp_cron
 EOF
 fi
