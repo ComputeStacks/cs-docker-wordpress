@@ -2,11 +2,13 @@
 
 set -e
 
+echo >&2 "Configuring ComputeStacks path"
+sudo -u www-data wp --path=/var/www/html/wordpress config set CS_PLUGIN_DIR '/opt/cs-wordpress-plugin-main'
+
 if [ -f "/opt/cs-wordpress-plugin-main/cstacks-config.php" ]; then
   echo >&2 "Updating ComputeStacks integration with latest version..."
   sudo -u www-data mkdir -p /var/www/html/wordpress/wp-content/mu-plugins
   sudo -u www-data cp /opt/cs-wordpress-plugin-main/cstacks-config.php /var/www/html/wordpress/wp-content/mu-plugins/
-  sudo -u www-data wp --path=/var/www/html/wordpress config set CS_PLUGIN_DIR /opt/cs-wordpress-plugin-main
 fi
 
 echo >&2 "Configuring wordpress cron jobs..."

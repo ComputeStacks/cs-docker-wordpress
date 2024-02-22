@@ -2,11 +2,13 @@
 
 set -e
 
+echo >&2 "Configuring ComputeStacks path"
+sudo -u www-data wp --path=/var/www/html/wordpress config set CS_PLUGIN_DIR '/opt/cs-wordpress-plugin-main'
+
 if [ -f "/opt/cs-wordpress-plugin-main/cstacks-config.php" ]; then
   echo >&2 "Updating ComputeStacks integration with latest version..."
   sudo -u www-data mkdir -p /var/www/html/wordpress/wp-content/mu-plugins
   sudo -u www-data cp /opt/cs-wordpress-plugin-main/cstacks-config.php /var/www/html/wordpress/wp-content/mu-plugins/
-  sudo -u www-data wp --path=/var/www/html/wordpress config set CS_PLUGIN_DIR /opt/cs-wordpress-plugin-main
 fi
 
 echo >&2 "Configuring wordpress cron jobs..."
@@ -52,6 +54,7 @@ if grep -Fq 'errorlog' /usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf; then
   echo "wordpress errorlog configuration found, skipping..."
 else
   cat << EOF >> '/usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf'
+
 errorlog /var/www/logs/error.log {
   useServer               0
   logLevel                NOTICE
@@ -66,6 +69,7 @@ if grep -Fq 'accesslog' /usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf; then
   echo "wordpress accesslog configuration found, skipping..."
 else
   cat << EOF >> '/usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf'
+
 accesslog /var/www/logs/access.log {
   useServer               0
   logFormat               "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"
@@ -81,6 +85,7 @@ if grep -Fq 'realm protected' /usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf;
   echo "wordpress protected realm found, skipping..."
 else
   cat << EOF >> '/usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf'
+
 realm protected {
   
   userDB  {
@@ -98,6 +103,7 @@ if grep -Fq 'xmlrpc' /usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf; then
   echo "wordpress xmlrpc block found, skipping..."
 else
   cat << EOF >> '/usr/local/lsws/conf/vhosts/Wordpress/vhconf.conf'
+
 context /xmlrpc.php {
   allowBrowse             0
 
