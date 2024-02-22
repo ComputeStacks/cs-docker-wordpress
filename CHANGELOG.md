@@ -1,5 +1,10 @@
 # ComputeStacks Wordpress on OpenLiteSpeed Changelog
 
+## 2024-Feb-22
+
+* Adjust where multisite nginx config examples are stored to align with changes in the parent php image.
+* remove cs_auth_key env variable assignment in php. This is now done in the parent php image.
+
 ## 2024-Feb-21
 
 * Remove `MAILTO=` from the app cronjob. Mail is now disabled globally for all cronjobs.

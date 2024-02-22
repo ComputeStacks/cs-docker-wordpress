@@ -1,16 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
 
 mkdir -p /var/www/html/wordpress && chown www-data:www-data /var/www/html/wordpress
 cd /var/www/html/wordpress
 
-# check if /etc/nginx/sites-available/multisite-subdirectory.conf exists, if not copy it to /var/www/nginx/multisite-subdirectory.conf.example
-if [ -f /etc/nginx/sites-available/multisite-subdirectory.conf ]; then
-  cp /etc/nginx/sites-available/multisite-subdirectory.conf /var/www/nginx/multisite-subdirectory.conf.example
+# re-seed volume with up to date examples
+if [ -f /opt/nginx/multisite-subdirectory.conf ]; then
+  cp /opt/nginx/multisite-subdirectory.conf /var/www/nginx/multisite-subdirectory.conf.example
 fi
-# check if /etc/nginx/sites-available/multisite-subdomain.conf exists, if not copy it to /var/www/nginx/multisite-subdomain.conf.example
-if [ -f /etc/nginx/sites-available/multisite-subdomain.conf ]; then
-  cp /etc/nginx/sites-available/multisite-subdomain.conf /var/www/nginx/multisite-subdomain.conf.example
+if [ -f /opt/nginx/multisite-subdomain.conf ]; then
+  cp /opt/nginx/multisite-subdomain.conf /var/www/nginx/multisite-subdomain.conf.example
 fi
+
+chown -R www-data:www-data /var/www/nginx
 
 wait_for_db() {
   counter=0
