@@ -73,11 +73,11 @@ jobs:
 
       - name: Test container image
         run: >
-          docker run --network=host -d \
+          docker run --name=mysql -d \
             -e MARIADB_ROOT_PASSWORD=ch3ngeme \
             mariadb:11
           docker run --rm --name=testwp${{ matrix.php_version }} -d \
-            --network=host \
+            --network "container:mysql" \
             -e CS_AUTH_KEY=FcUpBTaoi746JbAdhWqJwtmXC0en1M3u \
             -e METADATA_SERVICE=http://localhost \
             -e METADATA_AUTH=foobar123 \
