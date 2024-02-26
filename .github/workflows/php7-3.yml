@@ -2,14 +2,14 @@ name: "PHP 7.3"
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "main" ]
-    paths:
-      - "php7.3-litespeed/**"
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - "php7.3-litespeed/**"
+  # push:
+  #   branches: [ "main" ]
+  #   paths:
+  #     - "php7.3-litespeed/**"
+  # pull_request:
+  #   branches: [ "main" ]
+  #   paths:
+  #     - "php7.3-litespeed/**"
 
 env:
   # The default repo env will be 'ComputeStacks'; uppercase is not allowed.

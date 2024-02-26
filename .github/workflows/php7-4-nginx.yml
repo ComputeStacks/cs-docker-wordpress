@@ -4,14 +4,14 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '35 19 * * 2'
-  push:
-    branches: [ "main" ]
-    paths:
-      - "php7.4-nginx/**"
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - "php7.4-nginx/**"
+  # push:
+  #   branches: [ "main" ]
+  #   paths:
+  #     - "php7.4-nginx/**"
+  # pull_request:
+  #   branches: [ "main" ]
+  #   paths:
+  #     - "php7.4-nginx/**"
 
 env:
   # The default repo env will be 'ComputeStacks'; uppercase is not allowed.

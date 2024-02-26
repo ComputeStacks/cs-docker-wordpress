@@ -1,0 +1,26 @@
+version: "3.6"
+services:
+  mariadb:
+    image: mariadb:11
+    environment:
+      - MARIADB_ROOT_PASSWORD=ch3ngeme
+  wordpress:
+    build:
+      context: .
+      args:
+        - php_version=8.2
+    links:
+      - mariadb
+    environment:
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: ch3ngeme
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_NAME: wp82
+      WORDPRESS_TITLE: blogger
+      WORDPRESS_PASSWORD: ch3ngeme
+      WORDPRESS_URL: localhost
+      WORDPRESS_EMAIL: admin@example.com
+      WORDPRESS_USER: admin
+      CS_AUTH_KEY: FcUpBTaoi746JbAdhWqJwtmXC0en1M3u
+      METADATA_SERVICE: http://localhost
+      METADATA_AUTH: foobar
