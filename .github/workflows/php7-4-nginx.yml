@@ -2,8 +2,8 @@ name: "PHP 7.4 nginx"
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '35 19 * * 2'
+  # schedule:
+  #   - cron: '35 19 * * 2'
   # push:
   #   branches: [ "main" ]
   #   paths:

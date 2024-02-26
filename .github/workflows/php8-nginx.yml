@@ -83,7 +83,7 @@ jobs:
             -e METADATA_AUTH=foobar123 \
             -e WORDPRESS_DB_USER=root \
             -e WORDPRESS_DB_PASSWORD=ch3ngeme \
-            -e WORDPRESS_DB_HOST=localhost \
+            -e WORDPRESS_DB_HOST=127.0.0.1 \
             -e WORDPRESS_TITLE=blogger \
             -e WORDPRESS_PASSWORD=ch3ngeme \
             -e WORDPRESS_URL=localhost \

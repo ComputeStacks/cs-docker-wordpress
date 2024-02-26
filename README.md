@@ -1,15 +1,8 @@
-# WordPress on OpenLiteSpeed and nginx
+# WordPress Images
 
-[![PHP 8.2](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-2.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-2.yml)
+[![PHP 8 nginx](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-nginx.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-nginx.yml)
 
-[![PHP 8.1](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-1.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-1.yml)
-
-[![PHP 8.0](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-0.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-0.yml)
-
-[![PHP 7.4](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php7-4.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php7-4.yml)
-
-[![PHP 7.3](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php7-3.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php7-3.yml)
-
+Our php 7 and openlitespeed images are deprecated and will only receive security updates. Please migrate to our php 8 nginx images.
 
 ## Submitting Issues
 

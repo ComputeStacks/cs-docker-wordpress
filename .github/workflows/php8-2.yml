@@ -2,8 +2,8 @@ name: "PHP 8.2"
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '35 21 * * 2'
+  # schedule:
+  #   - cron: '35 21 * * 2'
   # push:
   #   branches: [ "main" ]
   #   paths:
