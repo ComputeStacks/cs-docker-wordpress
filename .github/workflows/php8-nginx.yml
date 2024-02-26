@@ -76,7 +76,7 @@ jobs:
           docker run --name=mysql -d \
             -e MARIADB_ROOT_PASSWORD=ch3ngeme \
             mariadb:11
-          docker run --rm --name=wptest -d \
+          docker run --name=wptest -d \
             --network "container:mysql" \
             -e CS_AUTH_KEY=FcUpBTaoi746JbAdhWqJwtmXC0en1M3u \
             -e METADATA_SERVICE=http://localhost \
@@ -89,7 +89,7 @@ jobs:
             -e WORDPRESS_URL=localhost \
             -e WORDPRESS_EMAIL=admin@example.com \
             -e WORDPRESS_USER=admin \
-            ghcr.io/${{ env.GH_REPO }}:php${{ matrix.php_version }}-nginx
+            ${{ matrix.image }}:php${{ matrix.php_version }}-nginx
           bash ./scripts/container-health.sh wptest
 
       - name: Build and push
