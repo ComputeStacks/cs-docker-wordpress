@@ -59,6 +59,7 @@ PHP
   sudo -u www-data wp config set WP_AUTO_UPDATE_CORE 'minor'
   sudo -u www-data wp config set FS_METHOD 'direct'
   sudo -u www-data wp config set WP_MEMORY_LIMIT '96M'
+  sudo -u www-data wp config set CS_PLUGIN_DIR '/opt/cs-wordpress-plugin-main'
 
   echo >&2 "Uninstall default plugins"
   sudo -u www-data wp plugin is-installed akismet && sudo -u www-data wp plugin uninstall akismet
@@ -95,12 +96,5 @@ PHP
     sudo -u www-data wp language core install $WORDPRESS_LANGUAGE
     sudo -u www-data wp language core activate $WORDPRESS_LANGUAGE
   fi
-
-else
-
-  echo "Setting DB Host"
-  sudo -u www-data wp config set DB_HOST $WORDPRESS_DB_HOST
-  echo >&2 "Configuring nginx cache path"
-  sudo -u www-data wp config set RT_WP_NGINX_HELPER_CACHE_PATH '/var/run/nginx-cache'  
 
 fi
