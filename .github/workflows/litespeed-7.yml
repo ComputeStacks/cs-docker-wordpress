@@ -1,17 +1,9 @@
-name: "PHP 7.4 Litespeed"
+name: "Litespeed 7"
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '35 19 * * 2'
-  # push:
-  #   branches: [ "main" ]
-  #   paths:
-  #     - "php7.4-litespeed/**"
-  # pull_request:
-  #   branches: [ "main" ]
-  #   paths:
-  #     - "php7.4-litespeed/**"
+  schedule:
+    - cron: '35 21 * * 3'
 
 env:
   # The default repo env will be 'ComputeStacks'; uppercase is not allowed.
@@ -21,6 +13,7 @@ jobs:
   build:
     strategy:
       matrix:
+        php_version: [ "7.4" ]
         image: [ "ghcr.io/computestacks/cs-docker-wordpress", "cmptstks/wordpress" ]
 
     runs-on: ubuntu-latest
@@ -56,12 +49,12 @@ jobs:
         with:
           images: ${{ matrix.image }}
           tags: |
-            php7.4-litespeed
+            php${{ matrix.php_version }}-litespeed
 
       - name: Build and prepare to test
         uses: docker/build-push-action@v5
         with:
-          context: litespeed/php7.4/
+          context: litespeed/php${{ matrix.php_version }}/
           load: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -92,7 +85,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v5
         with:
-          context: litespeed/php7.4/
+          context: litespeed/php${{ matrix.php_version }}/
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

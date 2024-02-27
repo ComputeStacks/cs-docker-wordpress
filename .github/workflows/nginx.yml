@@ -3,7 +3,7 @@ name: "nginx"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 21 * * 3'
+    - cron: '35 19 * * 3'
 
 env:
   # The default repo env will be 'ComputeStacks'; uppercase is not allowed.

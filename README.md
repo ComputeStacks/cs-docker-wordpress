@@ -4,7 +4,9 @@
 
 Our openlitespeed images are deprecated and will only receive security updates. Please migrate to our nginx images.
 
-[![PHP 8 litespeed](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-litespeed.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-litespeed.yml)
+[![Litespeed 8](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/litespeed-8.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/litespeed-8.yml)
+
+[![Litespeed 7](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/litespeed-7.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/litespeed-7.yml)
 
 
 ## Submitting Issues
