@@ -1,8 +1,11 @@
 # WordPress Images
 
-[![PHP 8 nginx](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-nginx.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-nginx.yml)
+[![nginx](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/nginx.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/nginx.yml)
 
-Our php 7 and openlitespeed images are deprecated and will only receive security updates. Please migrate to our php 8 nginx images.
+Our openlitespeed images are deprecated and will only receive security updates. Please migrate to our nginx images.
+
+[![PHP 8 litespeed](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-litespeed.yml/badge.svg)](https://github.com/ComputeStacks/cs-docker-wordpress/actions/workflows/php8-litespeed.yml)
+
 
 ## Submitting Issues
 

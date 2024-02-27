@@ -1,5 +1,13 @@
 # ComputeStacks Wordpress on OpenLiteSpeed Changelog
 
+## 2024-feb-26
+
+* Deprecated OpenLiteSpeed images.
+* Added basic testing to images.
+* Support for multi-arch php 8 nginx images.
+
+***
+
 ## 2024-Feb-22
 
 * Adjust where multisite nginx config examples are stored to align with changes in the parent php image.
