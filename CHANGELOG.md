@@ -1,5 +1,11 @@
 # ComputeStacks Wordpress on OpenLiteSpeed Changelog
 
+## 2026-July-08
+
+* Dropped the `linux/arm64` build (and the QEMU setup) from the nginx images; they now build `linux/amd64` only. arm64 is no longer supported, and the parent `cs-docker-php` nginx image is now amd64-only, so the multi-arch build failed to resolve an arm64 base layer (`no match for platform in manifest`).
+
+***
+
 ## 2024-feb-26
 
 * Deprecated OpenLiteSpeed images.
