@@ -2,6 +2,7 @@
 
 ## 2026-July-08
 
+* Bumped the GitHub Actions across all workflows to the majors that run on Node 24, clearing the "Node.js 20 is deprecated" warnings: `actions/checkout` v4→v5, `docker/setup-buildx-action` v3→v4, `docker/login-action` v3→v4, `docker/metadata-action` v5→v6, `docker/build-push-action` v5→v7.
 * Dropped the `linux/arm64` build (and the QEMU setup) from the nginx images; they now build `linux/amd64` only. arm64 is no longer supported, and the parent `cs-docker-php` nginx image is now amd64-only, so the multi-arch build failed to resolve an arm64 base layer (`no match for platform in manifest`).
 
 ***
